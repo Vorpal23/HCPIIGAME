@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 
 Public Class PlayerAva
-    Dim ClockC As Integer = 1
+    Dim ClockC As Integer= 1
     Protected Overrides ReadOnly Property CreateParams() As CreateParams
         Get
             ' Make background transparent
@@ -11,14 +11,21 @@ Public Class PlayerAva
         End Get
     End Property
     Sub attack_Ani()
+Load_Ani:
+        Dim img(9) As Image
 
         Clock.Interval = (1000 / 5)
         Clock.Start()
-        Do While ClockC < 9
-            Me.BackgroundImage = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath + "\Game\Imgs\Attack\PA " + Trim(Str(ClockC)) + ".png")
+        Dim c As Integer
+        c = TimeOfDay.Second
+        Do While TimeOfDay.Second - c < 2
+            PictureBox1.Image = System.Drawing.Image.FromFile("C:\Users\Jorda\source\repos\Game\Game\Imgs\Attack\PA-1.gif", True)
         Loop
 
+        PictureBox1.Image = System.Drawing.Image.FromFile("C:\Users\Jorda\source\repos\Game\Game\Imgs\Idle\PI 1.png", True)
 
+
+        '"C:\Users\Jorda\source\repos\Game\Game\obj\Debug\Imgs\Attack\PA 1.png"
 
     End Sub
     Protected Overrides Sub OnPaintBackground(e As PaintEventArgs)

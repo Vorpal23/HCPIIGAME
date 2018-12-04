@@ -32,10 +32,10 @@ Partial Class Form1
         '
         'PlayerAva1
         '
-        Me.PlayerAva1.BackColor = System.Drawing.Color.Black
+        Me.PlayerAva1.BackColor = System.Drawing.Color.Transparent
         Me.PlayerAva1.BackgroundImage = CType(resources.GetObject("PlayerAva1.BackgroundImage"), System.Drawing.Image)
         Me.PlayerAva1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PlayerAva1.Location = New System.Drawing.Point(97, 12)
+        Me.PlayerAva1.Location = New System.Drawing.Point(346, 207)
         Me.PlayerAva1.Name = "PlayerAva1"
         Me.PlayerAva1.Size = New System.Drawing.Size(99, 177)
         Me.PlayerAva1.TabIndex = 0
