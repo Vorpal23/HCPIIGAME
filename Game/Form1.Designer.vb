@@ -22,7 +22,6 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.PlayerAva1 = New Game.PlayerAva()
         Me.SuspendLayout()
@@ -32,23 +31,26 @@ Partial Class Form1
         '
         'PlayerAva1
         '
+        Me.PlayerAva1.AutoSize = True
         Me.PlayerAva1.BackColor = System.Drawing.Color.Transparent
-        Me.PlayerAva1.BackgroundImage = CType(resources.GetObject("PlayerAva1.BackgroundImage"), System.Drawing.Image)
-        Me.PlayerAva1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PlayerAva1.Location = New System.Drawing.Point(346, 207)
+        Me.PlayerAva1.Location = New System.Drawing.Point(78, 44)
         Me.PlayerAva1.Name = "PlayerAva1"
-        Me.PlayerAva1.Size = New System.Drawing.Size(99, 177)
+        Me.PlayerAva1.Size = New System.Drawing.Size(153, 179)
         Me.PlayerAva1.TabIndex = 0
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1480, 638)
         Me.Controls.Add(Me.PlayerAva1)
+        Me.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.KeyPreview = True
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

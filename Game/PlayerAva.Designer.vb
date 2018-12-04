@@ -33,21 +33,28 @@ Partial Class PlayerAva
         '
         'PictureBox1
         '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Black
+        Me.PictureBox1.InitialImage = Nothing
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(150, 176)
+        Me.PictureBox1.Size = New System.Drawing.Size(101, 123)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        Me.PictureBox1.WaitOnLoad = True
         '
         'PlayerAva
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.BackColor = System.Drawing.Color.Transparent
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "PlayerAva"
-        Me.Size = New System.Drawing.Size(150, 176)
+        Me.Size = New System.Drawing.Size(104, 126)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
