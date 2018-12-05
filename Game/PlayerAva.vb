@@ -3,9 +3,9 @@
 Public Class PlayerAva
     Property Mvmspeed As Integer = 5
     Property Hitpoints As Integer
+    Property Max_Hitpoints As Integer = 20
 
-
-    Sub Movement(KEY As KeyPressEventArgs)
+    Async Sub Movement(KEY As KeyPressEventArgs)
         Dim k As String = LCase(KEY.KeyChar)
         Dim X As Integer = Me.Left
         Dim Y As Integer = Me.Top
@@ -20,7 +20,7 @@ Public Class PlayerAva
 
             End If
         End If
-            If k = "s" Then
+        If k = "s" Then
             Y = Me.Top + Mvmspeed
             If Form1.Wallex1.Can_Move_Ver(Me) Then
                 Me.Top = Y
@@ -30,7 +30,7 @@ Public Class PlayerAva
 
             End If
         End If
-            If k = "a" Then
+        If k = "a" Then
             X = Me.Left - Mvmspeed
             If Form1.Wallex1.Can_Move_Hor(Me) Then
                 Me.Top = Y
@@ -55,6 +55,19 @@ Public Class PlayerAva
                 Me.Left = X - (Mvmspeed + 1)
             End If
         End If
+        Dim walk As Boolean
+        walk = True
+        While walk
+            If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
+
+            Wait(500)
+            walk = False
+        End While
+        If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
+
+
+        PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif"
+
     End Sub
 
     Private Sub Wait(ByVal interval As Integer)
@@ -86,12 +99,12 @@ Load_Ani:
 
         'PictureBox1.Image = System.Drawing.Image.FromFile("C:\Users\Jorda\source\repos\Game\Game\Imgs\Attack\PA-1.gif", True)
 
-        PictureBox1.ImageLocation = "C:\Users\Jorda\source\repos\Game\Game\Imgs\Attack\PA-1.gif"
+        PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Attack\PA.gif"
         Wait(550)
         ' PictureBox1.BackColor = Color.Black
         'Wait(5)
         'PictureBox1.BackColor = Color.Transparent
-        PictureBox1.ImageLocation = "C:\Users\Jorda\source\repos\Game\Game\Imgs\Idle\PI 1.png"
+        PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif"
         'System.Drawing.Image.FromFile("C:\Users\Jorda\source\repos\Game\Game\Imgs\Idle\PI 1.png", True)
 
 
@@ -113,6 +126,8 @@ Load_Ani:
 
         PictureBox1.BackColor = Color.Transparent
         PictureBox1.ImageLocation = "C:\Users\Jorda\source\repos\Game\Game\Imgs\Idle\PI 1.png"
+        Max_Hitpoints = 20
+        Hitpoints = 20
     End Sub
 
     Private Sub Clock_Tick(sender As Object, e As EventArgs) Handles Clock.Tick

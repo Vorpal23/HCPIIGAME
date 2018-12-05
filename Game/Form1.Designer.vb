@@ -25,6 +25,7 @@ Partial Class Form1
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Wallex1 = New Game.Wallex()
         Me.PlayerAva1 = New Game.PlayerAva()
+        Me.Hitpointsbar1 = New Game.Hitpointsbar()
         Me.SuspendLayout()
         '
         'BackgroundWorker1
@@ -42,11 +43,23 @@ Partial Class Form1
         '
         Me.PlayerAva1.AutoSize = True
         Me.PlayerAva1.BackColor = System.Drawing.Color.Transparent
+        Me.PlayerAva1.Hitpoints = 20
         Me.PlayerAva1.Location = New System.Drawing.Point(95, 165)
+        Me.PlayerAva1.Max_Hitpoints = 20
         Me.PlayerAva1.Mvmspeed = 5
         Me.PlayerAva1.Name = "PlayerAva1"
-        Me.PlayerAva1.Size = New System.Drawing.Size(90, 102)
+        Me.PlayerAva1.Size = New System.Drawing.Size(104, 126)
         Me.PlayerAva1.TabIndex = 0
+        '
+        'Hitpointsbar1
+        '
+        Me.Hitpointsbar1.BackColor = System.Drawing.Color.Transparent
+        Me.Hitpointsbar1.current = 0
+        Me.Hitpointsbar1.Location = New System.Drawing.Point(12, 12)
+        Me.Hitpointsbar1.max = 0
+        Me.Hitpointsbar1.Name = "Hitpointsbar1"
+        Me.Hitpointsbar1.Size = New System.Drawing.Size(262, 43)
+        Me.Hitpointsbar1.TabIndex = 2
         '
         'Form1
         '
@@ -54,6 +67,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1480, 638)
+        Me.Controls.Add(Me.Hitpointsbar1)
         Me.Controls.Add(Me.Wallex1)
         Me.Controls.Add(Me.PlayerAva1)
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaption
@@ -68,4 +82,5 @@ Partial Class Form1
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents PlayerAva1 As PlayerAva
     Friend WithEvents Wallex1 As Wallex
+    Friend WithEvents Hitpointsbar1 As Hitpointsbar
 End Class

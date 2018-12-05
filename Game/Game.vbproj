@@ -101,6 +101,12 @@
     <Compile Include="PlayerAva.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Hitpointsbar.Designer.vb">
+      <DependentUpon>Hitpointsbar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Hitpointsbar.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Wallex.Designer.vb">
       <DependentUpon>Wallex.vb</DependentUpon>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerAva.resx">
       <DependentUpon>PlayerAva.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hitpointsbar.resx">
+      <DependentUpon>Hitpointsbar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Wallex.resx">
       <DependentUpon>Wallex.vb</DependentUpon>

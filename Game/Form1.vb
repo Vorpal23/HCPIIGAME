@@ -16,4 +16,17 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub Wallex1_Load(sender As Object, e As EventArgs) Handles Wallex1.Load
+
+    End Sub
+
+    Private Sub Wallex1_Click(sender As Object, e As EventArgs) Handles Wallex1.Click
+        Hitpointsbar1.Update(PlayerAva1)
+    End Sub
+
+    Private Sub Wallex1_DoubleClick(sender As Object, e As EventArgs) Handles Wallex1.DoubleClick
+        PlayerAva1.Hitpoints += -1
+        Hitpointsbar1.Update(PlayerAva1)
+    End Sub
 End Class
