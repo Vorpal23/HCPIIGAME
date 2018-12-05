@@ -2,6 +2,8 @@
 
 Public Class PlayerAva
     Property Mvmspeed As Integer = 5
+    Property Hitpoints As Integer
+
 
     Sub Movement(KEY As KeyPressEventArgs)
         Dim k As String = LCase(KEY.KeyChar)

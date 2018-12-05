@@ -1,0 +1,11 @@
+Logic that Links Avatar to the closest wall then pairs them
+Logic that lets TCP connection Control Avatar
+
+Make An Enemy Class
+Make Items For Avatars
+
+
+[Battle]
+Add Battle UI
+Add Event for "Monster"
+Add Dmg and things like that
