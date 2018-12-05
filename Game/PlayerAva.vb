@@ -5,10 +5,38 @@ Public Class PlayerAva
 
     Sub Movement(KEY As KeyPressEventArgs)
         Dim k As String = LCase(KEY.KeyChar)
-        If k = "w" Then Me.Top = Me.Top - Mvmspeed
-        If k = "s" Then Me.Top = Me.Top + Mvmspeed
-        If k = "a" Then Me.Left = Me.Left - Mvmspeed
-        If k = "d" Then Me.Left = Me.Left + Mvmspeed
+        Dim X As Integer = Me.Left
+        Dim Y As Integer = Me.Top
+
+        If k = "w" Then
+            Y = Me.Top - Mvmspeed
+            ' If Form1.Wallex1.Can_Move_Ver(Me) Then
+            Me.Top = Y
+            Me.Left = X
+            'End If
+        End If
+        If k = "s" Then
+            Y = Me.Top + Mvmspeed
+            'If Form1.Wallex1.Can_Move_Ver(Me) Then
+            Me.Top = Y
+            Me.Left = X
+            'end If
+        End If
+        If k = "a" Then
+            X = Me.Left - Mvmspeed
+            If Form1.Wallex1.Can_Move_Hor(Me) Then
+                Me.Top = Y
+                Me.Left = X
+            End If
+        End If
+        If k = "d" Then
+
+            X = Me.Left + Mvmspeed
+            If Form1.Wallex1.Can_Move_Hor(Me) Then
+                Me.Top = Y
+                Me.Left = X
+            End If
+        End If
     End Sub
 
     Private Sub Wait(ByVal interval As Integer)

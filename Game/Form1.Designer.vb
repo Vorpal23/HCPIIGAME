@@ -23,19 +23,29 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.Wallex1 = New Game.Wallex()
         Me.PlayerAva1 = New Game.PlayerAva()
         Me.SuspendLayout()
         '
         'BackgroundWorker1
         '
         '
+        'Wallex1
+        '
+        Me.Wallex1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Wallex1.Location = New System.Drawing.Point(365, 165)
+        Me.Wallex1.Name = "Wallex1"
+        Me.Wallex1.Size = New System.Drawing.Size(181, 81)
+        Me.Wallex1.TabIndex = 1
+        '
         'PlayerAva1
         '
         Me.PlayerAva1.AutoSize = True
         Me.PlayerAva1.BackColor = System.Drawing.Color.Transparent
-        Me.PlayerAva1.Location = New System.Drawing.Point(78, 44)
+        Me.PlayerAva1.Location = New System.Drawing.Point(95, 165)
+        Me.PlayerAva1.Mvmspeed = 5
         Me.PlayerAva1.Name = "PlayerAva1"
-        Me.PlayerAva1.Size = New System.Drawing.Size(153, 179)
+        Me.PlayerAva1.Size = New System.Drawing.Size(90, 102)
         Me.PlayerAva1.TabIndex = 0
         '
         'Form1
@@ -44,6 +54,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1480, 638)
+        Me.Controls.Add(Me.Wallex1)
         Me.Controls.Add(Me.PlayerAva1)
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.KeyPreview = True
@@ -56,4 +67,5 @@ Partial Class Form1
 
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents PlayerAva1 As PlayerAva
+    Friend WithEvents Wallex1 As Wallex
 End Class

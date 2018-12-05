@@ -101,6 +101,12 @@
     <Compile Include="PlayerAva.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Wallex.Designer.vb">
+      <DependentUpon>Wallex.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Wallex.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerAva.resx">
       <DependentUpon>PlayerAva.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wallex.resx">
+      <DependentUpon>Wallex.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
