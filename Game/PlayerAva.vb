@@ -10,23 +10,32 @@ Public Class PlayerAva
 
         If k = "w" Then
             Y = Me.Top - Mvmspeed
-            ' If Form1.Wallex1.Can_Move_Ver(Me) Then
-            Me.Top = Y
-            Me.Left = X
-            'End If
+            If Form1.Wallex1.Can_Move_Ver(Me) Then
+                Me.Top = Y
+                Me.Left = X
+            Else
+                Me.Top = Y + (Mvmspeed + 1)
+
+            End If
         End If
-        If k = "s" Then
+            If k = "s" Then
             Y = Me.Top + Mvmspeed
-            'If Form1.Wallex1.Can_Move_Ver(Me) Then
-            Me.Top = Y
-            Me.Left = X
-            'end If
+            If Form1.Wallex1.Can_Move_Ver(Me) Then
+                Me.Top = Y
+                Me.Left = X
+            Else
+                Me.Top = Y - (Mvmspeed + 1)
+
+            End If
         End If
-        If k = "a" Then
+            If k = "a" Then
             X = Me.Left - Mvmspeed
             If Form1.Wallex1.Can_Move_Hor(Me) Then
                 Me.Top = Y
                 Me.Left = X
+            Else
+
+                Me.Left = X + (Mvmspeed + 1)
             End If
         End If
         If k = "d" Then
@@ -35,6 +44,13 @@ Public Class PlayerAva
             If Form1.Wallex1.Can_Move_Hor(Me) Then
                 Me.Top = Y
                 Me.Left = X
+            Else
+
+
+
+
+
+                Me.Left = X - (Mvmspeed + 1)
             End If
         End If
     End Sub

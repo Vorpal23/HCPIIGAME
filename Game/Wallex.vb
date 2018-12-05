@@ -6,7 +6,7 @@
 
 
         If obj.Top < Me.Top + Me.Height AndAlso obj.Top + obj.Height > Me.Top Then
-            If obj.Left < Me.Left AndAlso obj.Right < Me.Right AndAlso obj.Left < Me.Left + Me.Width Then
+            If obj.Right > Me.Left AndAlso obj.Left < Me.Right Then
                 Return False
             Else
                 Return True
@@ -38,10 +38,16 @@
     'End Function
 
     Function Can_Move_Ver(obj As PlayerAva) As Boolean
-        If obj.Top < Me.Top AndAlso Me.Top < obj.Top + obj.Height Then
-            Return False
+        If obj.Right > Me.Left AndAlso obj.Left < Me.Right Then
+
+            If obj.Top < Me.Bottom AndAlso obj.Bottom > Me.Top Then
+                Return False
+            Else
+                Return True
+            End If
         Else
             Return True
+
         End If
     End Function
 End Class
