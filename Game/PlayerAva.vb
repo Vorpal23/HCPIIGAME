@@ -125,7 +125,7 @@ Load_Ani:
         ' PictureBox1.BackColor = Color.Transparent
 
         PictureBox1.BackColor = Color.Transparent
-        PictureBox1.ImageLocation = "C:\Users\Jorda\source\repos\Game\Game\Imgs\Idle\PI 1.png"
+        PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif"
         Max_Hitpoints = 20
         Hitpoints = 20
     End Sub
