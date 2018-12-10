@@ -15,7 +15,7 @@
             Return True
 
         End If
-
+        'dfse
 
 
         'If obj.Left < Me.Left AndAlso Me.Left < obj.Left + obj.Width AndAlso obj.Left < Me.Left + Me.Width AndAlso Me.Left + Me.Width < obj.Left + obj.Width Then
