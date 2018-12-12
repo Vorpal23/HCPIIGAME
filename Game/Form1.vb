@@ -1,6 +1,5 @@
 ﻿Public Class Form1
     Dim key As KeyPressEventArgs
-    Dim keyPressed As Boolean
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
 
@@ -41,5 +40,15 @@
 
     Private Sub Form1_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
         PlayerAva1.keyPressed = False
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Hitpointsbar1.Update(PlayerAva1)
+        PlayerAva1.Mvmspeed = 5
+
+    End Sub
+
+    Private Sub btnBattleUI_Click(sender As Object, e As EventArgs) Handles btnBattleUI.Click
+        Battleui1.inta(PlayerAva1)
     End Sub
 End Class

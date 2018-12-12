@@ -4,7 +4,7 @@ Public Class PlayerAva
     Property Mvmspeed As Integer = 5
     Property Hitpoints As Integer
     Property Max_Hitpoints As Integer = 20
-    Public keyPressed As Boolean
+    Property keyPressed As Boolean
     Dim walk As Boolean
 
     Async Sub Movement(KEY As KeyPressEventArgs)
@@ -12,51 +12,48 @@ Public Class PlayerAva
         Dim X As Integer = Me.Left
         Dim Y As Integer = Me.Top
 
+
         If k = "w" Then
-            Y = Me.Top - Mvmspeed
-            If Form1.Wallex1.Can_Move_Ver(Me) Then
-                Me.Top = Y
-                Me.Left = X
-            Else
-                Me.Top = Y + (Mvmspeed + 1)
-
+            If Form1.Wallex1.Can_Move_Ver(Me, -1 * Mvmspeed) Then
+                Me.Top = Me.Top - Mvmspeed
+                If Not Form1.Wallex1.Can_Move_Ver(Me, -1 * Mvmspeed) Then
+                    Me.Top = Me.Top + 2 * Mvmspeed
+                End If
             End If
         End If
+
         If k = "s" Then
-            Y = Me.Top + Mvmspeed
-            If Form1.Wallex1.Can_Move_Ver(Me) Then
-                Me.Top = Y
-                Me.Left = X
-            Else
-                Me.Top = Y - (Mvmspeed + 1)
-
+            If Form1.Wallex1.Can_Move_Ver(Me, Mvmspeed) Then
+                Me.Top = Me.Top + Mvmspeed
+                If Not Form1.Wallex1.Can_Move_Ver(Me, Mvmspeed) Then
+                    Me.Top = Me.Top - 2 * Mvmspeed
+                End If
             End If
         End If
+
         If k = "a" Then
-            X = Me.Left - Mvmspeed
-            If Form1.Wallex1.Can_Move_Hor(Me) Then
-                Me.Top = Y
-                Me.Left = X
-            Else
-
-                Me.Left = X + (Mvmspeed + 1)
+            If Form1.Wallex1.Can_Move_hor(Me, -1 * Mvmspeed) Then
+                Me.Left = Me.Left - Mvmspeed
+                If Not Form1.Wallex1.Can_Move_Hor(Me, -1 * Mvmspeed) Then
+                    Me.Left = Me.Left + 2 * Mvmspeed
+                End If
             End If
         End If
+
         If k = "d" Then
-
-            X = Me.Left + Mvmspeed
-            If Form1.Wallex1.Can_Move_Hor(Me) Then
-                Me.Top = Y
-                Me.Left = X
-            Else
-
-
-
-
-
-                Me.Left = X - (Mvmspeed + 1)
+            If Form1.Wallex1.Can_Move_Hor(Me, Mvmspeed) Then
+                Me.Left = Me.Left + Mvmspeed
+                If Not Form1.Wallex1.Can_Move_Hor(Me, -Mvmspeed) Then
+                    Me.Left = Me.Left - 2 * Mvmspeed
+                End If
             End If
         End If
+
+
+
+
+
+
         walk = True
         'While walk
         '    'If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
@@ -142,6 +139,9 @@ Load_Ani:
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        attack_Ani()
+        Attack_Ani()
     End Sub
+    Function position() As Integer()
+
+    End Function
 End Class

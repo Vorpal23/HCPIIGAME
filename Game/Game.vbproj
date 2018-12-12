@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Battleui.Designer.vb">
+      <DependentUpon>Battleui.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Battleui.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,7 @@
     <Compile Include="Hitpointsbar.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="TCPServerHOST.vb" />
     <Compile Include="Wallex.Designer.vb">
       <DependentUpon>Wallex.vb</DependentUpon>
     </Compile>
@@ -115,6 +122,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Battleui.resx">
+      <DependentUpon>Battleui.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>

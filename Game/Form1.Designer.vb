@@ -28,6 +28,8 @@ Partial Class Form1
         Me.PlayerAva1 = New Game.PlayerAva()
         Me.Hitpointsbar1 = New Game.Hitpointsbar()
         Me.Tm1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Battleui1 = New Game.Battleui()
+        Me.btnBattleUI = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BackgroundWorker1
@@ -46,6 +48,7 @@ Partial Class Form1
         Me.PlayerAva1.AutoSize = True
         Me.PlayerAva1.BackColor = System.Drawing.Color.Transparent
         Me.PlayerAva1.Hitpoints = 20
+        Me.PlayerAva1.keyPressed = False
         Me.PlayerAva1.Location = New System.Drawing.Point(103, 135)
         Me.PlayerAva1.Max_Hitpoints = 20
         Me.PlayerAva1.Mvmspeed = 5
@@ -67,12 +70,31 @@ Partial Class Form1
         '
         Me.Tm1.Interval = 1
         '
+        'Battleui1
+        '
+        Me.Battleui1.Location = New System.Drawing.Point(32, 316)
+        Me.Battleui1.Name = "Battleui1"
+        Me.Battleui1.Size = New System.Drawing.Size(841, 399)
+        Me.Battleui1.TabIndex = 3
+        Me.Battleui1.Visible = False
+        '
+        'btnBattleUI
+        '
+        Me.btnBattleUI.Location = New System.Drawing.Point(12, 61)
+        Me.btnBattleUI.Name = "btnBattleUI"
+        Me.btnBattleUI.Size = New System.Drawing.Size(96, 23)
+        Me.btnBattleUI.TabIndex = 4
+        Me.btnBattleUI.Text = "Show Battle UI"
+        Me.btnBattleUI.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1284, 638)
+        Me.Controls.Add(Me.btnBattleUI)
+        Me.Controls.Add(Me.Battleui1)
         Me.Controls.Add(Me.Hitpointsbar1)
         Me.Controls.Add(Me.Wallex1)
         Me.Controls.Add(Me.PlayerAva1)
@@ -90,4 +112,6 @@ Partial Class Form1
     Friend WithEvents Wallex1 As Wallex
     Friend WithEvents Hitpointsbar1 As Hitpointsbar
     Friend WithEvents Tm1 As Timer
+    Friend WithEvents Battleui1 As Battleui
+    Friend WithEvents btnBattleUI As Button
 End Class
