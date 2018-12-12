@@ -4,6 +4,8 @@ Public Class PlayerAva
     Property Mvmspeed As Integer = 5
     Property Hitpoints As Integer
     Property Max_Hitpoints As Integer = 20
+    Public keyPressed As Boolean
+    Dim walk As Boolean
 
     Async Sub Movement(KEY As KeyPressEventArgs)
         Dim k As String = LCase(KEY.KeyChar)
@@ -55,29 +57,29 @@ Public Class PlayerAva
                 Me.Left = X - (Mvmspeed + 1)
             End If
         End If
-        Dim walk As Boolean
         walk = True
-        While walk
-            If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
+        'While walk
+        '    'If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
 
-            Wait(500)
-            walk = False
-        End While
-        If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
+        '    Clock.Interval = (1000 / 5)
+        '    Clock.Start()
+        '    walk = False
+        'End While
+        'If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
 
 
-        PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif"
+        'PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif"
 
     End Sub
 
     Private Sub Wait(ByVal interval As Integer)
         Dim sw As New Stopwatch
-        sw.Start()
+        sw.Restart()
         Do While sw.ElapsedMilliseconds < interval
             ' Allows UI to remain responsive
             Application.DoEvents()
         Loop
-        sw.Stop()
+        sw.Reset()
     End Sub
     Dim ClockC As Integer = 1
     Protected Overrides ReadOnly Property CreateParams() As CreateParams
@@ -123,7 +125,7 @@ Load_Ani:
     Private Sub UserControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Me.BackColor = Color.Transparent
         ' PictureBox1.BackColor = Color.Transparent
-
+        Clock.Start()
         PictureBox1.BackColor = Color.Transparent
         PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif"
         Max_Hitpoints = 20
@@ -132,11 +134,11 @@ Load_Ani:
 
     Private Sub Clock_Tick(sender As Object, e As EventArgs) Handles Clock.Tick
         ClockC += 1
-
-    End Sub
-
-    Private Sub Clock_Disposed(sender As Object, e As EventArgs) Handles Clock.Disposed
-
+        If keyPressed = True And PictureBox1.ImageLocation <> My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" Then
+            PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
+        ElseIf keyPressed = False And PictureBox1.ImageLocation <> My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif" Then
+            PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif"
+        End If
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click

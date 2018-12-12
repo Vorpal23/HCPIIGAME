@@ -1,6 +1,6 @@
 ﻿Public Class Form1
     Dim key As KeyPressEventArgs
-    Dim keyCalled As Boolean
+    Dim keyPressed As Boolean
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
 
@@ -11,7 +11,7 @@
     Private Sub Form1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
         'PlayerAva1.Movement(e)
         key = e
-        keyCalled = True
+        PlayerAva1.keyPressed = True
         ' If (PlayerAva1.Left + PlayerAva1.Width) > Wallex1.Left Then
         'MsgBox("T")
         'End If
@@ -33,13 +33,13 @@
     End Sub
 
     Private Sub Tm1_Tick(sender As Object, e As EventArgs) Handles Tm1.Tick
-        'MsgBox("Hello?")
-        If keyCalled = True Then
+
+        If PlayerAva1.keyPressed = True Then
             PlayerAva1.Movement(key)
         End If
     End Sub
 
     Private Sub Form1_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
-        keyCalled = False
+        PlayerAva1.keyPressed = False
     End Sub
 End Class
