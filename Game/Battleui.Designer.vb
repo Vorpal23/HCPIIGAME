@@ -40,7 +40,7 @@ Partial Class Battleui
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.btnHide)
         Me.Name = "Battleui"
-        Me.Size = New System.Drawing.Size(841, 399)
+        Me.Size = New System.Drawing.Size(1300, 621)
         Me.ResumeLayout(False)
 
     End Sub
