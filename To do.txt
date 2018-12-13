@@ -9,3 +9,17 @@ Make Items For Avatars
 Add Battle UI
 Add Event for "Monster"
 Add Dmg and things like that
+
+
+
+
+
+
+            If k = "w" Then
+                    If Form1.Wallex1.Can_Move_Ver(Me, -1 * (Mvmspeed)) Then
+                        Me.Top = Me.Top - Mvmspeed
+                        If Not Form1.Wallex1.Can_Move_Ver(Me, -1 * (Mvmspeed)) Then
+                            Me.Top = Me.Top + 2 * Mvmspeed
+                        End If
+                    End If
+                End If
