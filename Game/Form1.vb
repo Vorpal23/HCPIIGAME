@@ -1,6 +1,13 @@
-﻿Public Class Form1
-    Dim key As KeyPressEventArgs
+﻿Imports System.Net.Sockets
+Imports System.IO
+Imports System.Net
 
+Public Class Form1
+    Dim key As KeyPressEventArgs
+    Dim tc As TcpClient = New TcpClient()
+    Dim ns As NetworkStream
+    Dim br As BinaryReader
+    Dim bw As BinaryWriter
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
 
     End Sub
@@ -45,10 +52,27 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Hitpointsbar1.Update(PlayerAva1)
         PlayerAva1.Mvmspeed = 5
+        'TCPServerHOST.Main()
+        Me.Show()
+
+        tc.Connect(“10.24.81.72”, 8888)
+        ns = tc.GetStream
+        br = New BinaryReader(ns)
+        bw = New BinaryWriter(ns)
+
+
+        MsgBox(br.ReadString)
 
     End Sub
 
     Private Sub btnBattleUI_Click(sender As Object, e As EventArgs) Handles btnBattleUI.Click
         Battleui1.inta(PlayerAva1)
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ns = tc.GetStream
+        br = New BinaryReader(ns)
+        bw = New BinaryWriter(ns)
+        bw.Write(TextBox1.Text)
     End Sub
 End Class

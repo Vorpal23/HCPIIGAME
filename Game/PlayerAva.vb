@@ -6,7 +6,13 @@ Public Class PlayerAva
     Property Max_Hitpoints As Integer = 20
     Property keyPressed As Boolean
     Dim walk As Boolean
+    Property Ident As id
 
+    Structure id
+        Dim name As String
+        Dim cls As String
+
+    End Structure
     Async Sub Movement(KEY As KeyPressEventArgs)
         Dim k As String = LCase(KEY.KeyChar)
         Dim X As Integer = Me.Left
