@@ -93,11 +93,11 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1284, 638)
-        Me.Controls.Add(Me.btnBattleUI)
-        Me.Controls.Add(Me.Battleui1)
         Me.Controls.Add(Me.Hitpointsbar1)
-        Me.Controls.Add(Me.Wallex1)
         Me.Controls.Add(Me.PlayerAva1)
+        Me.Controls.Add(Me.Battleui1)
+        Me.Controls.Add(Me.btnBattleUI)
+        Me.Controls.Add(Me.Wallex1)
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.KeyPreview = True
         Me.Name = "Form1"

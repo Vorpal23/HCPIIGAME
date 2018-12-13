@@ -6,7 +6,8 @@
         Me.Show()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnHide.Click
         Me.Hide()
+        Form1.PlayerAva1.Mvmspeed = 5
     End Sub
 End Class

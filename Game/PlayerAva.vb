@@ -54,7 +54,11 @@ Public Class PlayerAva
 
 
 
-        walk = True
+        If Mvmspeed <> 0 Then
+            walk = True
+        Else
+            walk = False
+        End If
         'While walk
         '    'If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
 
@@ -131,7 +135,7 @@ Load_Ani:
 
     Private Sub Clock_Tick(sender As Object, e As EventArgs) Handles Clock.Tick
         ClockC += 1
-        If keyPressed = True And PictureBox1.ImageLocation <> My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" Then
+        If keyPressed = True And Mvmspeed <> 0 And PictureBox1.ImageLocation <> My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" Then
             PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
         ElseIf keyPressed = False And PictureBox1.ImageLocation <> My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif" Then
             PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif"
