@@ -1,15 +1,16 @@
 ﻿Public Class Battleui
-    Dim tempL As Single, tempT As Single
-    Dim paladin As PlayerAva
+    Dim Player As PlayerAva
+    Private Sub Battleui_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
     Sub inta(ply As PlayerAva)
         Me.Show()
-        tempL = ply.Left
-        tempT = ply.Top
-        paladin = ply
-        'Should probably move players to a designated position
-        'Turn on a battle flag
-        ply.Left = 200
-        ply.Top = 200
+        Player = ply
+        Player.Mvmspeed = 0
+        Player.PositionXY(1) = Player.Left
+        Player.PositionXY(2) = Player.Top
+        Player.Top = 200
+        Player.Left = 200
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnHide.Click
@@ -17,5 +18,7 @@
         paladin.Left = tempL
         paladin.Top = tempT
         Form1.PlayerAva1.Mvmspeed = 5
+        Player.Left = Player.PositionXY(1)
+        Player.Top = Player.PositionXY(2)
     End Sub
 End Class

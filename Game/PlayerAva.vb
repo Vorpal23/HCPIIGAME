@@ -6,6 +6,7 @@ Public Class PlayerAva
     Property Max_Hitpoints As Integer = 20
     Property keyPressed As Boolean
     Dim walk As Boolean
+    Property PositionXY As Integer()
 
     Async Sub Movement(KEY As KeyPressEventArgs)
         Dim k As String = LCase(KEY.KeyChar)
@@ -83,6 +84,17 @@ Public Class PlayerAva
         sw.Reset()
     End Sub
     Dim ClockC As Integer = 1
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+        ReDim PositionXY(2)
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+
     Protected Overrides ReadOnly Property CreateParams() As CreateParams
         Get
             ' Make background transparent

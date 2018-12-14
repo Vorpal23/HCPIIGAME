@@ -54,6 +54,5 @@
         Battleui1.Height = Me.Height
         Battleui1.Left = 0
         Battleui1.Top = 55
-        PlayerAva1.Mvmspeed = 0
     End Sub
 End Class

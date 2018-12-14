@@ -76,7 +76,7 @@ Partial Class Battleui
         Me.Controls.Add(Me.btFight)
         Me.Controls.Add(Me.btnHide)
         Me.Name = "Battleui"
-        Me.Size = New System.Drawing.Size(841, 399)
+        Me.Size = New System.Drawing.Size(1300, 621)
         Me.ResumeLayout(False)
 
     End Sub
