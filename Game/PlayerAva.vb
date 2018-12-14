@@ -95,8 +95,8 @@ Public Class PlayerAva
 Load_Ani:
         Dim img(9) As Image
 
-        Clock.Interval = (1000 / 5)
-        Clock.Start()
+        'Clock.Interval = (1000 / 5)
+        'Clock.Start()
 
 
 
