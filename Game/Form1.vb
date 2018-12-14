@@ -8,12 +8,9 @@
         PlayerAva1.BackgroundImage = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath + "\Imgs\Idle\PI 1.png")
     End Sub
     Private Sub Form1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
-        'PlayerAva1.Movement(e)
+
         key = e
         PlayerAva1.keyPressed = True
-        ' If (PlayerAva1.Left + PlayerAva1.Width) > Wallex1.Left Then
-        'MsgBox("T")
-        'End If
 
     End Sub
 
