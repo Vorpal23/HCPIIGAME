@@ -102,7 +102,7 @@ Load_Ani:
 
         'PictureBox1.Image = System.Drawing.Image.FromFile("C:\Users\Jorda\source\repos\Game\Game\Imgs\Attack\PA-1.gif", True)
 
-        PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Attack\PA.gif"
+        PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Attack\PA-1.gif"
         Wait(550)
         ' PictureBox1.BackColor = Color.Black
         'Wait(5)
