@@ -157,7 +157,31 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Imgs\" />
+    <None Include="Imgs\Attack\WA.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imgs\Attack\CA.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imgs\Idle\CI.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imgs\Idle\WI.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imgs\Walk\WW.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imgs\Walk\CW.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imgs\Idle\PI.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imgs\Walk\PW.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imgs\Attack\PA.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

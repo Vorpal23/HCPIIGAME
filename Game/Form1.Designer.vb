@@ -30,10 +30,9 @@ Partial Class Form1
         Me.Tm1 = New System.Windows.Forms.Timer(Me.components)
         Me.Battleui1 = New Game.Battleui()
         Me.btnBattleUI = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'BackgroundWorker1
-        '
         '
         'Wallex1
         '
@@ -53,8 +52,11 @@ Partial Class Form1
         Me.PlayerAva1.Max_Hitpoints = 20
         Me.PlayerAva1.Mvmspeed = 5
         Me.PlayerAva1.Name = "PlayerAva1"
+        Me.PlayerAva1.pname = Nothing
+        Me.PlayerAva1.PositionXY = New Integer() {0, 0, 0}
         Me.PlayerAva1.Size = New System.Drawing.Size(104, 126)
         Me.PlayerAva1.TabIndex = 0
+        Me.PlayerAva1.type = "Cleric"
         '
         'Hitpointsbar1
         '
@@ -87,17 +89,35 @@ Partial Class Form1
         Me.btnBattleUI.Text = "Show Battle UI"
         Me.btnBattleUI.UseVisualStyleBackColor = True
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(346, 36)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(199, 20)
+        Me.TextBox1.TabIndex = 5
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(560, 36)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1284, 638)
-        Me.Controls.Add(Me.Hitpointsbar1)
-        Me.Controls.Add(Me.PlayerAva1)
-        Me.Controls.Add(Me.Battleui1)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btnBattleUI)
+        Me.Controls.Add(Me.Battleui1)
+        Me.Controls.Add(Me.Hitpointsbar1)
         Me.Controls.Add(Me.Wallex1)
+        Me.Controls.Add(Me.PlayerAva1)
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.KeyPreview = True
         Me.Name = "Form1"
@@ -114,4 +134,6 @@ Partial Class Form1
     Friend WithEvents Tm1 As Timer
     Friend WithEvents Battleui1 As Battleui
     Friend WithEvents btnBattleUI As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button1 As Button
 End Class

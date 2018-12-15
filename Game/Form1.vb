@@ -1,11 +1,11 @@
 ﻿Public Class Form1
     Dim key As KeyPressEventArgs
-
-    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
-
-    End Sub
-    Private Sub PlayerAva1_Load(sender As Object, e As EventArgs)
-        PlayerAva1.BackgroundImage = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath + "\Imgs\Idle\PI 1.png")
+    Sub Chose()
+        Dim pal As New PlayerAva With {
+           .Left = 50,
+           .Top = 50,
+            .Visible = True,
+        .type = "Paladin"}
     End Sub
     Private Sub Form1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
         'PlayerAva1.Movement(e)
@@ -45,6 +45,7 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Hitpointsbar1.Update(PlayerAva1)
         PlayerAva1.Mvmspeed = 5
+        Chose()
 
     End Sub
 
@@ -54,5 +55,9 @@
         Battleui1.Height = Me.Height
         Battleui1.Left = 0
         Battleui1.Top = 55
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        PlayerAva1.type = TextBox1.Text
     End Sub
 End Class

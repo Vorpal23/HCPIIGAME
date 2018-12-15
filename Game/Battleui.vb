@@ -15,10 +15,14 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnHide.Click
         Me.Hide()
-        paladin.Left = tempL
-        paladin.Top = tempT
+        'paladin.Left = tempL
+        ' paladin.Top = tempT
         Form1.PlayerAva1.Mvmspeed = 5
         Player.Left = Player.PositionXY(1)
         Player.Top = Player.PositionXY(2)
+    End Sub
+
+    Private Sub btFight_Click(sender As Object, e As EventArgs) Handles btFight.Click
+
     End Sub
 End Class

@@ -1,13 +1,72 @@
 ﻿Imports System.IO
 
 Public Class PlayerAva
+    '// Property declarations
     Property Mvmspeed As Integer = 5
     Property Hitpoints As Integer
     Property Max_Hitpoints As Integer = 20
     Property keyPressed As Boolean
-    Dim walk As Boolean
     Property PositionXY As Integer()
+    Property wep As Item
+    Property pname As String
+    Property type As String = "Cleric"
+    '// Global Declarations ( ONLY USED IN THIS CLASS ) 
+    Dim walk As Boolean
 
+
+    Structure position ' This is a better way of handeling positions IMO FUCK IT DONT WORK LIKE THAT
+        Dim x As Integer
+        Dim y As Integer
+    End Structure
+
+    Function Walk_Img() As Image
+            Dim out As Image
+            Select Case Type
+                Case "Paladin"
+                    out = My.Resources.Paladin_walk
+                Case "Wizard"
+                    out = My.Resources.Wizard_Walk
+                Case "Cleric"
+                    out = My.Resources.Cleric_Walk
+                Case Else
+                    MsgBox("Class Invalid")
+            End Select
+            Return out
+        End Function
+        Function Attack_Img() As Image
+            Dim out As Image
+            Select Case Type
+                Case "Paladin"
+                    out = My.Resources.Paladin_attack
+                Case "Wizard"
+                    out = My.Resources.Wizard_Attack
+                Case "Cleric"
+                    out = My.Resources.Cleric_Attack
+                Case Else
+                    MsgBox("Class Invalid")
+            End Select
+            Return out
+
+        End Function
+        Function Idle_Img() As Image
+            Dim out As Image
+            Select Case Type
+                Case "Paladin"
+                    out = My.Resources.Paladin_Idle
+                Case "Wizard"
+                    out = My.Resources.Wizard_Idle
+                Case "Cleric"
+                    out = My.Resources.Cleric_Idle
+                Case Else
+                    MsgBox("Class Invalid")
+            End Select
+            Return out
+        End Function
+
+    Structure Item ' provides a structure for items Mainly weapons
+        Dim AP As Integer ' attack Points
+        Dim name As String ' item Name
+    End Structure
     Async Sub Movement(KEY As KeyPressEventArgs)
         Dim k As String = LCase(KEY.KeyChar)
         Dim X As Integer = Me.Left
@@ -33,7 +92,7 @@ Public Class PlayerAva
         End If
 
         If k = "a" Then
-            If Form1.Wallex1.Can_Move_hor(Me, -1 * Mvmspeed) Then
+            If Form1.Wallex1.Can_Move_Hor(Me, -1 * Mvmspeed) Then
                 Me.Left = Me.Left - Mvmspeed
                 If Not Form1.Wallex1.Can_Move_Hor(Me, -1 * Mvmspeed) Then
                     Me.Left = Me.Left + 2 * Mvmspeed
@@ -114,12 +173,12 @@ Load_Ani:
 
         'PictureBox1.Image = System.Drawing.Image.FromFile("C:\Users\Jorda\source\repos\Game\Game\Imgs\Attack\PA-1.gif", True)
 
-        PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Attack\PA-1.gif"
+        PictureBox1.Image = Attack_Img()
         Wait(550)
         ' PictureBox1.BackColor = Color.Black
         'Wait(5)
         'PictureBox1.BackColor = Color.Transparent
-        PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif"
+        PictureBox1.Image = Idle_Img()
         'System.Drawing.Image.FromFile("C:\Users\Jorda\source\repos\Game\Game\Imgs\Idle\PI 1.png", True)
 
 
@@ -140,24 +199,22 @@ Load_Ani:
         ' PictureBox1.BackColor = Color.Transparent
         Clock.Start()
         PictureBox1.BackColor = Color.Transparent
-        PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif"
+        PictureBox1.Image = Idle_Img()
         Max_Hitpoints = 20
         Hitpoints = 20
     End Sub
 
     Private Sub Clock_Tick(sender As Object, e As EventArgs) Handles Clock.Tick
         ClockC += 1
-        If keyPressed = True And Mvmspeed <> 0 And PictureBox1.ImageLocation <> My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" Then
-            PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
-        ElseIf keyPressed = False And PictureBox1.ImageLocation <> My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif" Then
-            PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Idle\PI.gif"
+        If keyPressed = True And Mvmspeed <> 0 And PictureBox1.Image.ToString <> Walk_Img().ToString Then
+            PictureBox1.Image = Walk_Img()
+        ElseIf keyPressed = False And PictureBox1.Image.ToString <> idle_Img().ToString Then
+            PictureBox1.Image = Idle_Img()
         End If
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Attack_Ani()
     End Sub
-    Function position() As Integer()
 
-    End Function
 End Class
