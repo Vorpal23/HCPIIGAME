@@ -24,61 +24,19 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.Wallex1 = New Game.Wallex()
-        Me.PlayerAva1 = New Game.PlayerAva()
-        Me.Hitpointsbar1 = New Game.Hitpointsbar()
         Me.Tm1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Battleui1 = New Game.Battleui()
         Me.btnBattleUI = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Battleui1 = New Game.Battleui()
+        Me.Hitpointsbar1 = New Game.Hitpointsbar()
+        Me.Wallex1 = New Game.Wallex()
+        Me.PlayerAva1 = New Game.PlayerAva()
         Me.SuspendLayout()
-        '
-        'Wallex1
-        '
-        Me.Wallex1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Wallex1.Location = New System.Drawing.Point(365, 165)
-        Me.Wallex1.Name = "Wallex1"
-        Me.Wallex1.Size = New System.Drawing.Size(181, 81)
-        Me.Wallex1.TabIndex = 1
-        '
-        'PlayerAva1
-        '
-        Me.PlayerAva1.AutoSize = True
-        Me.PlayerAva1.BackColor = System.Drawing.Color.Transparent
-        Me.PlayerAva1.Hitpoints = 20
-        Me.PlayerAva1.keyPressed = False
-        Me.PlayerAva1.Location = New System.Drawing.Point(103, 135)
-        Me.PlayerAva1.Max_Hitpoints = 20
-        Me.PlayerAva1.Mvmspeed = 5
-        Me.PlayerAva1.Name = "PlayerAva1"
-        Me.PlayerAva1.pname = Nothing
-        Me.PlayerAva1.PositionXY = New Integer() {0, 0, 0}
-        Me.PlayerAva1.Size = New System.Drawing.Size(104, 126)
-        Me.PlayerAva1.TabIndex = 0
-        Me.PlayerAva1.type = "Cleric"
-        '
-        'Hitpointsbar1
-        '
-        Me.Hitpointsbar1.BackColor = System.Drawing.Color.Transparent
-        Me.Hitpointsbar1.current = 0
-        Me.Hitpointsbar1.Location = New System.Drawing.Point(12, 12)
-        Me.Hitpointsbar1.max = 0
-        Me.Hitpointsbar1.Name = "Hitpointsbar1"
-        Me.Hitpointsbar1.Size = New System.Drawing.Size(262, 43)
-        Me.Hitpointsbar1.TabIndex = 2
         '
         'Tm1
         '
         Me.Tm1.Interval = 1
-        '
-        'Battleui1
-        '
-        Me.Battleui1.Location = New System.Drawing.Point(32, 316)
-        Me.Battleui1.Name = "Battleui1"
-        Me.Battleui1.Size = New System.Drawing.Size(841, 399)
-        Me.Battleui1.TabIndex = 3
-        Me.Battleui1.Visible = False
         '
         'btnBattleUI
         '
@@ -104,6 +62,51 @@ Partial Class Form1
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Battleui1
+        '
+        Me.Battleui1.BackColor = System.Drawing.Color.Transparent
+        Me.Battleui1.Location = New System.Drawing.Point(-8, 255)
+        Me.Battleui1.Name = "Battleui1"
+        Me.Battleui1.Size = New System.Drawing.Size(841, 399)
+        Me.Battleui1.TabIndex = 3
+        Me.Battleui1.Visible = False
+        '
+        'Hitpointsbar1
+        '
+        Me.Hitpointsbar1.BackColor = System.Drawing.Color.Transparent
+        Me.Hitpointsbar1.current = 0
+        Me.Hitpointsbar1.Location = New System.Drawing.Point(12, 12)
+        Me.Hitpointsbar1.max = 0
+        Me.Hitpointsbar1.Name = "Hitpointsbar1"
+        Me.Hitpointsbar1.Size = New System.Drawing.Size(262, 43)
+        Me.Hitpointsbar1.TabIndex = 2
+        '
+        'Wallex1
+        '
+        Me.Wallex1.AutoSize = True
+        Me.Wallex1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Wallex1.BackColor = System.Drawing.Color.Transparent
+        Me.Wallex1.Location = New System.Drawing.Point(271, 118)
+        Me.Wallex1.Name = "Wallex1"
+        Me.Wallex1.Size = New System.Drawing.Size(274, 200)
+        Me.Wallex1.TabIndex = 1
+        '
+        'PlayerAva1
+        '
+        Me.PlayerAva1.AutoSize = True
+        Me.PlayerAva1.BackColor = System.Drawing.Color.Transparent
+        Me.PlayerAva1.Hitpoints = 20
+        Me.PlayerAva1.keyPressed = False
+        Me.PlayerAva1.Location = New System.Drawing.Point(103, 135)
+        Me.PlayerAva1.Max_Hitpoints = 20
+        Me.PlayerAva1.Mvmspeed = 5
+        Me.PlayerAva1.Name = "PlayerAva1"
+        Me.PlayerAva1.pname = Nothing
+        Me.PlayerAva1.PositionXY = New Integer() {0, 0, 0}
+        Me.PlayerAva1.Size = New System.Drawing.Size(104, 126)
+        Me.PlayerAva1.TabIndex = 0
+        Me.PlayerAva1.type = "Paladin"
         '
         'Form1
         '

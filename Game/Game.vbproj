@@ -183,5 +183,8 @@
   <ItemGroup>
     <None Include="bin\Debug\Imgs\Attack\PA.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Imgs\Wall\wall.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

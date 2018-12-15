@@ -3,7 +3,7 @@
 
 
     Private Sub Wallex_Load(sender As Object, e As EventArgs) Handles Me.Load
-        PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Wall\wall.jpg"
+        PictureBox1.Image = My.Resources.wall
     End Sub
 
     Function Can_Move_Hor(obj As PlayerAva, Mvmspeed As Integer) As Boolean
