@@ -28,10 +28,19 @@ Partial Class Form1
         Me.btnBattleUI = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Battleui1 = New Game.Battleui()
         Me.Hitpointsbar1 = New Game.Hitpointsbar()
         Me.Wallex1 = New Game.Wallex()
         Me.PlayerAva1 = New Game.PlayerAva()
+        Me.PlayerAva2 = New Game.PlayerAva()
+        Me.PlayerAva3 = New Game.PlayerAva()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Tm1
@@ -49,19 +58,80 @@ Partial Class Form1
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(346, 36)
+        Me.TextBox1.Location = New System.Drawing.Point(280, 34)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(199, 20)
         Me.TextBox1.TabIndex = 5
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(560, 36)
+        Me.Button1.Location = New System.Drawing.Point(485, 31)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.RadioButton2)
+        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Location = New System.Drawing.Point(926, 12)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(181, 148)
+        Me.GroupBox1.TabIndex = 7
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "GroupBox1"
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(17, 26)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(90, 17)
+        Me.RadioButton1.TabIndex = 0
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "RadioButton1"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(17, 49)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(90, 17)
+        Me.RadioButton2.TabIndex = 1
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "RadioButton2"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(100, 19)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(17, 72)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(14, 106)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Label1"
         '
         'Battleui1
         '
@@ -89,7 +159,7 @@ Partial Class Form1
         Me.Wallex1.BackColor = System.Drawing.Color.Transparent
         Me.Wallex1.Location = New System.Drawing.Point(271, 118)
         Me.Wallex1.Name = "Wallex1"
-        Me.Wallex1.Size = New System.Drawing.Size(274, 200)
+        Me.Wallex1.Size = New System.Drawing.Size(240, 128)
         Me.Wallex1.TabIndex = 1
         '
         'PlayerAva1
@@ -98,7 +168,7 @@ Partial Class Form1
         Me.PlayerAva1.BackColor = System.Drawing.Color.Transparent
         Me.PlayerAva1.Hitpoints = 20
         Me.PlayerAva1.keyPressed = False
-        Me.PlayerAva1.Location = New System.Drawing.Point(103, 135)
+        Me.PlayerAva1.Location = New System.Drawing.Point(615, 123)
         Me.PlayerAva1.Max_Hitpoints = 20
         Me.PlayerAva1.Mvmspeed = 5
         Me.PlayerAva1.Name = "PlayerAva1"
@@ -108,12 +178,47 @@ Partial Class Form1
         Me.PlayerAva1.TabIndex = 0
         Me.PlayerAva1.type = "Paladin"
         '
+        'PlayerAva2
+        '
+        Me.PlayerAva2.AutoSize = True
+        Me.PlayerAva2.BackColor = System.Drawing.Color.Transparent
+        Me.PlayerAva2.Hitpoints = 20
+        Me.PlayerAva2.keyPressed = False
+        Me.PlayerAva2.Location = New System.Drawing.Point(517, 118)
+        Me.PlayerAva2.Max_Hitpoints = 20
+        Me.PlayerAva2.Mvmspeed = 5
+        Me.PlayerAva2.Name = "PlayerAva2"
+        Me.PlayerAva2.pname = Nothing
+        Me.PlayerAva2.PositionXY = New Integer() {0, 0, 0}
+        Me.PlayerAva2.Size = New System.Drawing.Size(104, 126)
+        Me.PlayerAva2.TabIndex = 8
+        Me.PlayerAva2.type = "Cleric"
+        '
+        'PlayerAva3
+        '
+        Me.PlayerAva3.AutoSize = True
+        Me.PlayerAva3.BackColor = System.Drawing.Color.Transparent
+        Me.PlayerAva3.Hitpoints = 20
+        Me.PlayerAva3.keyPressed = False
+        Me.PlayerAva3.Location = New System.Drawing.Point(741, 123)
+        Me.PlayerAva3.Max_Hitpoints = 20
+        Me.PlayerAva3.Mvmspeed = 5
+        Me.PlayerAva3.Name = "PlayerAva3"
+        Me.PlayerAva3.pname = Nothing
+        Me.PlayerAva3.PositionXY = New Integer() {0, 0, 0}
+        Me.PlayerAva3.Size = New System.Drawing.Size(104, 126)
+        Me.PlayerAva3.TabIndex = 9
+        Me.PlayerAva3.type = "Cleric"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1284, 638)
+        Me.ClientSize = New System.Drawing.Size(1276, 638)
+        Me.Controls.Add(Me.PlayerAva3)
+        Me.Controls.Add(Me.PlayerAva2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btnBattleUI)
@@ -125,6 +230,8 @@ Partial Class Form1
         Me.KeyPreview = True
         Me.Name = "Form1"
         Me.Text = "Form1"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -139,4 +246,12 @@ Partial Class Form1
     Friend WithEvents btnBattleUI As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents PlayerAva2 As PlayerAva
+    Friend WithEvents PlayerAva3 As PlayerAva
 End Class
