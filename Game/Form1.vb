@@ -1,11 +1,19 @@
-﻿Public Class Form1
+﻿Imports System.Net.Sockets
+Imports System.IO
+Imports System.Net
+Imports System.Threading
+Public Class Form1
     Dim key As KeyPressEventArgs
+    Dim hc As Boolean
+    Dim turn As String
+
     Sub Chose()
         Dim pal As New PlayerAva With {
            .Left = 50,
            .Top = 50,
             .Visible = True,
-        .type = "Paladin"}
+        .type = "Paladin"
+        }
     End Sub
     Private Sub Form1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
         'PlayerAva1.Movement(e)
@@ -32,10 +40,15 @@
     End Sub
 
     Private Sub Tm1_Tick(sender As Object, e As EventArgs) Handles Tm1.Tick
+        '  Dim ListenerThread As New Thread(New ThreadStart(AddressOf Host_Start))
+        ' If Not ListenerThread.IsAlive Then ListenerThread.Start()
 
         If PlayerAva1.keyPressed = True Then
             PlayerAva1.Movement(key)
         End If
+    End Sub
+    Sub Host_Start()
+        Dim h As New Host("10.24.81.72")
     End Sub
 
     Private Sub Form1_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
@@ -46,6 +59,9 @@
         Hitpointsbar1.Update(PlayerAva1)
         PlayerAva1.Mvmspeed = 5
         Chose()
+
+
+
 
     End Sub
 
@@ -59,5 +75,12 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         PlayerAva1.type = TextBox1.Text
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+
+
+
     End Sub
 End Class
