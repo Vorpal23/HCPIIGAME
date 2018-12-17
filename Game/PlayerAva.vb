@@ -119,14 +119,14 @@ Public Class PlayerAva
         Else
             walk = False
         End If
-        While walk
-            'If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
+        'While walk
+        '    'If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
 
-            Clock.Interval = (1000 / 5)
-            Clock.Start()
-            walk = False
-        End While
-        If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
+        '    Clock.Interval = (1000 / 5)
+        '    Clock.Start()
+        '    walk = False
+        'End While
+        'If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
 
 
 
@@ -206,9 +206,9 @@ Load_Ani:
 
     Private Sub Clock_Tick(sender As Object, e As EventArgs) Handles Clock.Tick
         ClockC += 1
-        If keyPressed = True And Mvmspeed <> 0 And PictureBox1.Image.ToString <> Walk_Img().ToString Then
+        If keyPressed = True And PictureBox1.Image.Width <> Walk_Img().Width Then
             PictureBox1.Image = Walk_Img()
-        ElseIf keyPressed = False And PictureBox1.Image.ToString <> idle_Img().ToString Then
+        ElseIf keyPressed = False Then
             PictureBox1.Image = Idle_Img()
         End If
     End Sub
