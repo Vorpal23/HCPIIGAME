@@ -29,8 +29,10 @@ Public Class PlayerAva
                 Case "Cleric"
                     out = My.Resources.Cleric_Walk
                 Case Else
-                    MsgBox("Class Invalid")
-            End Select
+                MsgBox("Class Invalid")
+
+                End
+        End Select
             Return out
         End Function
         Function Attack_Img() As Image
@@ -43,8 +45,9 @@ Public Class PlayerAva
                 Case "Cleric"
                     out = My.Resources.Cleric_Attack
                 Case Else
-                    MsgBox("Class Invalid")
-            End Select
+                MsgBox("Class Invalid")
+                End
+        End Select
             Return out
 
         End Function
@@ -58,8 +61,9 @@ Public Class PlayerAva
                 Case "Cleric"
                     out = My.Resources.Cleric_Idle
                 Case Else
-                    MsgBox("Class Invalid")
-            End Select
+                MsgBox("Class Invalid")
+                End
+        End Select
             Return out
         End Function
 
