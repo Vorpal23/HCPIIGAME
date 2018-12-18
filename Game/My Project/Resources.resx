@@ -133,9 +133,6 @@
   <data name="Paladin_Idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Imgs\Idle\PI.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Paladin_walk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Imgs\Walk\PW.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Player Sprites" xml:space="preserve">
     <value>d</value>
     <comment>Just Testing this</comment>
@@ -154,5 +151,8 @@
   </data>
   <data name="Orc_Idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imgs\Orc\OrcI.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paladin_walk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imgs\Walk\PW.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

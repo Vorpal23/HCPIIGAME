@@ -203,5 +203,8 @@
   <ItemGroup>
     <None Include="Imgs\Orc\OrcI.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Imgs\Walk\PW.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
