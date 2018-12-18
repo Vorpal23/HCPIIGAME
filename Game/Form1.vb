@@ -3,9 +3,19 @@ Imports System.IO
 Imports System.Net
 Imports System.Threading
 Public Class Form1
+    Dim mp As New Multiplayer(InputBox("path"), 2)
     Dim key As KeyPressEventArgs
     Dim hc As Boolean
     Dim turn As String
+    Public walls(1) As Wallex
+    Public enemies(0) As Enemy
+
+    Sub SetControl()
+        'PUT WALLS HERE RETARDS
+        walls(0) = Wallex1
+        walls(1) = Wallex2
+        enemies(0) = Enemy1
+    End Sub
 
     Sub Chose()
         Dim pal As New PlayerAva With {
@@ -59,7 +69,7 @@ Public Class Form1
         Hitpointsbar1.Update(PlayerAva1)
         PlayerAva1.Mvmspeed = 5
         Chose()
-
+        SetControl()
 
 
 
@@ -82,5 +92,13 @@ Public Class Form1
 
 
 
+    End Sub
+
+    Private Sub btNet_Click(sender As Object, e As EventArgs) Handles btNet.Click
+        mp.Turn_Advance(PlayerAva1, PlayerAva2, PlayerAva3)
+    End Sub
+
+    Private Sub btTake_Click(sender As Object, e As EventArgs) Handles btTake.Click
+        mp.Take_turn(PlayerAva1, PlayerAva2, PlayerAva3)
     End Sub
 End Class
