@@ -35,15 +35,14 @@ Partial Class Form1
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.btNet = New System.Windows.Forms.Button()
+        Me.btTake = New System.Windows.Forms.Button()
         Me.Wallex2 = New Game.Wallex()
         Me.Enemy1 = New Game.Enemy()
         Me.PlayerAva3 = New Game.PlayerAva()
         Me.PlayerAva2 = New Game.PlayerAva()
-        Me.Battleui1 = New Game.Battleui()
         Me.Hitpointsbar1 = New Game.Hitpointsbar()
         Me.Wallex1 = New Game.Wallex()
         Me.PlayerAva1 = New Game.PlayerAva()
-        Me.btTake = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -139,12 +138,21 @@ Partial Class Form1
         '
         'btNet
         '
-        Me.btNet.Location = New System.Drawing.Point(431, 312)
+        Me.btNet.Location = New System.Drawing.Point(556, 548)
         Me.btNet.Name = "btNet"
         Me.btNet.Size = New System.Drawing.Size(128, 78)
         Me.btNet.TabIndex = 12
         Me.btNet.Text = "NETWORK TEST"
         Me.btNet.UseVisualStyleBackColor = True
+        '
+        'btTake
+        '
+        Me.btTake.Location = New System.Drawing.Point(690, 548)
+        Me.btTake.Name = "btTake"
+        Me.btTake.Size = New System.Drawing.Size(128, 78)
+        Me.btTake.TabIndex = 13
+        Me.btTake.Text = "TAKE TURN"
+        Me.btTake.UseVisualStyleBackColor = True
         '
         'Wallex2
         '
@@ -158,8 +166,9 @@ Partial Class Form1
         '
         'Enemy1
         '
+        Me.Enemy1.Damage = 5
         Me.Enemy1.Hitpoints = 0
-        Me.Enemy1.Location = New System.Drawing.Point(965, 251)
+        Me.Enemy1.Location = New System.Drawing.Point(965, 15001)
         Me.Enemy1.Max_Hitpoints = 20
         Me.Enemy1.Mvmspeed = 5
         Me.Enemy1.Name = "Enemy1"
@@ -199,15 +208,6 @@ Partial Class Form1
         Me.PlayerAva2.TabIndex = 8
         Me.PlayerAva2.type = "Cleric"
         '
-        'Battleui1
-        '
-        Me.Battleui1.BackColor = System.Drawing.Color.Transparent
-        Me.Battleui1.Location = New System.Drawing.Point(-8, 255)
-        Me.Battleui1.Name = "Battleui1"
-        Me.Battleui1.Size = New System.Drawing.Size(841, 399)
-        Me.Battleui1.TabIndex = 3
-        Me.Battleui1.Visible = False
-        '
         'Hitpointsbar1
         '
         Me.Hitpointsbar1.BackColor = System.Drawing.Color.Transparent
@@ -244,15 +244,6 @@ Partial Class Form1
         Me.PlayerAva1.TabIndex = 0
         Me.PlayerAva1.type = "Paladin"
         '
-        'btTake
-        '
-        Me.btTake.Location = New System.Drawing.Point(565, 312)
-        Me.btTake.Name = "btTake"
-        Me.btTake.Size = New System.Drawing.Size(128, 78)
-        Me.btTake.TabIndex = 13
-        Me.btTake.Text = "TAKE TURN"
-        Me.btTake.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -269,7 +260,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btnBattleUI)
-        Me.Controls.Add(Me.Battleui1)
         Me.Controls.Add(Me.Hitpointsbar1)
         Me.Controls.Add(Me.Wallex1)
         Me.Controls.Add(Me.PlayerAva1)
@@ -289,7 +279,6 @@ Partial Class Form1
     Friend WithEvents Wallex1 As Wallex
     Friend WithEvents Hitpointsbar1 As Hitpointsbar
     Friend WithEvents Tm1 As Timer
-    Friend WithEvents Battleui1 As Battleui
     Friend WithEvents btnBattleUI As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button

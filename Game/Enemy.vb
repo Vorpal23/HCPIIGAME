@@ -6,6 +6,8 @@ Public Class Enemy
     Property Hitpoints As Integer
     Property Max_Hitpoints As Integer = 20
     Property PositionXY As Integer()
+    Property Damage As Integer = 5
+    Dim tickCount As Integer
 
     Public Sub New()
 
@@ -17,6 +19,27 @@ Public Class Enemy
 
         ' Add any initialization after the InitializeComponent() call.
 
+    End Sub
+
+    Sub MoveAround()
+        Dim MoveDir As Integer
+        Select Case MoveDir
+            Case 0 'Move up
+                Me.Top = Me.Top + Mvmspeed
+            Case 1 'Move Left
+                Me.Left = Me.Left + Mvmspeed
+            Case 2 'Move Right
+                Me.Left = Me.Left - Mvmspeed
+            Case 3 'Move Down
+                Me.Top = Me.Top - Mvmspeed
+        End Select
+
+        'Messing with direction
+        If MoveDir <= 3 Then
+            MoveDir += 1
+        Else
+            MoveDir = 0
+        End If
     End Sub
 
     Function Can_Move_Hor(obj As PlayerAva, Mvmspeed As Integer) As Boolean
@@ -47,4 +70,13 @@ Public Class Enemy
 
         End If
     End Function
+
+    Private Sub EnTmr_Tick(sender As Object, e As EventArgs) Handles EnTmr.Tick
+        If tickCount <= 5 Then
+            tickCount += 1
+        Else
+            MoveAround()
+            tickCount = 0
+        End If
+    End Sub
 End Class

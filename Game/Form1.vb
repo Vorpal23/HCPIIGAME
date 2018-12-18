@@ -54,6 +54,7 @@ Public Class Form1
         '  Dim ListenerThread As New Thread(New ThreadStart(AddressOf Host_Start))
         ' If Not ListenerThread.IsAlive Then ListenerThread.Start()
         mp.Take_turn(PlayerAva1, PlayerAva2, PlayerAva3)
+        Hitpointsbar1.Update(c)
         If c.keyPressed = True Then
             c.Movement(key)
             mp.Turn_Advance(PlayerAva1, PlayerAva2, PlayerAva3)
@@ -68,7 +69,7 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        c = PlayerAva2
+        c = PlayerAva1
         Hitpointsbar1.Update(c)
         c.Mvmspeed = 5
         Chose()
@@ -105,7 +106,7 @@ Public Class Form1
         mp.Take_turn(PlayerAva1, PlayerAva2, PlayerAva3)
     End Sub
 
-    Private Sub Battleui1_Load(sender As Object, e As EventArgs) Handles Battleui1.Load
+    Private Sub Battleui1_Load(sender As Object, e As EventArgs)
 
     End Sub
 End Class

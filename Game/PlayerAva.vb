@@ -166,18 +166,22 @@ Public Class PlayerAva
                 Case 0 'Top
                     If Not en.Can_Move_Ver(Me, -1 * Mvmspeed) Then
                         Me.Top = Me.Top + 2 * Mvmspeed
+                        Hitpoints -= Form1.enemies(c).Damage
                     End If
                 Case 1 'Bottom
                     If Not en.Can_Move_Ver(Me, Mvmspeed) Then
                         Me.Top = Me.Top - 2 * Mvmspeed
+                        Hitpoints -= Form1.enemies(c).Damage
                     End If
                 Case 2 'Left
                     If Not en.Can_Move_Hor(Me, -1 * Mvmspeed) Then
                         Me.Left = Me.Left + 2 * Mvmspeed
+                        Hitpoints -= Form1.enemies(c).Damage
                     End If
                 Case 3 'Right
                     If Not en.Can_Move_Hor(Me, -Mvmspeed) Then
                         Me.Left = Me.Left - 2 * Mvmspeed
+                        Hitpoints -= Form1.enemies(c).Damage
                     End If
             End Select
         Next
