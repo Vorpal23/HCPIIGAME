@@ -4,7 +4,7 @@ Imports System.Net
 Imports System.Threading
 Public Class Form1
     Dim c As PlayerAva
-    Dim mp As New Multiplayer(InputBox("path"), 2)
+    Dim mp As New Multiplayer("W:\network\t.txt", 2)
     Dim key As KeyPressEventArgs
     Dim hc As Boolean
     Dim turn As String
@@ -53,10 +53,15 @@ Public Class Form1
     Private Sub Tm1_Tick(sender As Object, e As EventArgs) Handles Tm1.Tick
         '  Dim ListenerThread As New Thread(New ThreadStart(AddressOf Host_Start))
         ' If Not ListenerThread.IsAlive Then ListenerThread.Start()
-        mp.Take_turn(PlayerAva1, PlayerAva2, PlayerAva3)
+
         Hitpointsbar1.Update(c)
         If c.keyPressed = True Then
             c.Movement(key)
+            Try
+                mp.Turn_Advance(PlayerAva1, PlayerAva2, PlayerAva3)
+            Catch ex As Exception
+                Thread.Sleep(500)
+            End Try
         End If
     End Sub
     Sub Host_Start()
@@ -65,6 +70,12 @@ Public Class Form1
 
     Private Sub Form1_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
         c.keyPressed = False
+        Try
+            mp.Take_turn(PlayerAva1, PlayerAva2, PlayerAva3)
+        Catch ex As Exception
+            Thread.Sleep(400)
+        End Try
+
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
