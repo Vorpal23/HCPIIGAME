@@ -159,6 +159,28 @@ Public Class PlayerAva
                     End If
             End Select
         Next
+
+        For c = 0 To UBound(Form1.enemies)
+            Dim en As Enemy = Form1.enemies(c)
+            Select Case id
+                Case 0 'Top
+                    If Not en.Can_Move_Ver(Me, -1 * Mvmspeed) Then
+                        Me.Top = Me.Top + 2 * Mvmspeed
+                    End If
+                Case 1 'Bottom
+                    If Not en.Can_Move_Ver(Me, Mvmspeed) Then
+                        Me.Top = Me.Top - 2 * Mvmspeed
+                    End If
+                Case 2 'Left
+                    If Not en.Can_Move_Hor(Me, -1 * Mvmspeed) Then
+                        Me.Left = Me.Left + 2 * Mvmspeed
+                    End If
+                Case 3 'Right
+                    If Not en.Can_Move_Hor(Me, -Mvmspeed) Then
+                        Me.Left = Me.Left - 2 * Mvmspeed
+                    End If
+            End Select
+        Next
     End Sub
 
     Private Sub Wait(ByVal interval As Integer)

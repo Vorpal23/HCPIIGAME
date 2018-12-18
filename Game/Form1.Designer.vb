@@ -34,6 +34,8 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.btNet = New System.Windows.Forms.Button()
+        Me.Wallex2 = New Game.Wallex()
         Me.Enemy1 = New Game.Enemy()
         Me.PlayerAva3 = New Game.PlayerAva()
         Me.PlayerAva2 = New Game.PlayerAva()
@@ -41,7 +43,7 @@ Partial Class Form1
         Me.Hitpointsbar1 = New Game.Hitpointsbar()
         Me.Wallex1 = New Game.Wallex()
         Me.PlayerAva1 = New Game.PlayerAva()
-        Me.Wallex2 = New Game.Wallex()
+        Me.btTake = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -135,6 +137,25 @@ Partial Class Form1
         Me.RadioButton1.Text = "RadioButton1"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
+        'btNet
+        '
+        Me.btNet.Location = New System.Drawing.Point(431, 312)
+        Me.btNet.Name = "btNet"
+        Me.btNet.Size = New System.Drawing.Size(128, 78)
+        Me.btNet.TabIndex = 12
+        Me.btNet.Text = "NETWORK TEST"
+        Me.btNet.UseVisualStyleBackColor = True
+        '
+        'Wallex2
+        '
+        Me.Wallex2.AutoSize = True
+        Me.Wallex2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Wallex2.BackColor = System.Drawing.Color.Transparent
+        Me.Wallex2.Location = New System.Drawing.Point(943, 423)
+        Me.Wallex2.Name = "Wallex2"
+        Me.Wallex2.Size = New System.Drawing.Size(240, 128)
+        Me.Wallex2.TabIndex = 11
+        '
         'Enemy1
         '
         Me.Enemy1.Hitpoints = 0
@@ -223,15 +244,14 @@ Partial Class Form1
         Me.PlayerAva1.TabIndex = 0
         Me.PlayerAva1.type = "Paladin"
         '
-        'Wallex2
+        'btTake
         '
-        Me.Wallex2.AutoSize = True
-        Me.Wallex2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Wallex2.BackColor = System.Drawing.Color.Transparent
-        Me.Wallex2.Location = New System.Drawing.Point(943, 423)
-        Me.Wallex2.Name = "Wallex2"
-        Me.Wallex2.Size = New System.Drawing.Size(240, 128)
-        Me.Wallex2.TabIndex = 11
+        Me.btTake.Location = New System.Drawing.Point(565, 312)
+        Me.btTake.Name = "btTake"
+        Me.btTake.Size = New System.Drawing.Size(128, 78)
+        Me.btTake.TabIndex = 13
+        Me.btTake.Text = "TAKE TURN"
+        Me.btTake.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -239,6 +259,8 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1276, 638)
+        Me.Controls.Add(Me.btTake)
+        Me.Controls.Add(Me.btNet)
         Me.Controls.Add(Me.Wallex2)
         Me.Controls.Add(Me.Enemy1)
         Me.Controls.Add(Me.PlayerAva3)
@@ -281,4 +303,6 @@ Partial Class Form1
     Friend WithEvents PlayerAva3 As PlayerAva
     Friend WithEvents Enemy1 As Enemy
     Friend WithEvents Wallex2 As Wallex
+    Friend WithEvents btNet As Button
+    Friend WithEvents btTake As Button
 End Class

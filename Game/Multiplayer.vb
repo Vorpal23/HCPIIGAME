@@ -5,12 +5,12 @@
     Property path As String
     Property Turn As String
     Property Count As Integer
-    Sub Take_trun(p1 As PlayerAva, p2 As PlayerAva, p3 As PlayerAva)
+    Sub Take_turn(p1 As PlayerAva, p2 As PlayerAva, p3 As PlayerAva)
         Dim player1 As String
         Dim player2 As String
         Dim player3 As String
 
-        FileOpen(1, path, OpenMode.Input, OpenAccess.ReadWrite)
+        FileOpen(1, path, OpenMode.Input, OpenAccess.Read)
         player1 = LineInput(1)
         player2 = LineInput(1)
         player3 = LineInput(1)
@@ -41,24 +41,29 @@
         Dim player2 As String
         Dim player3 As String
         Kill(path)
+        Dim x As IO.StreamWriter = System.IO.File.CreateText(path)
 
-        FileOpen(1, path, OpenMode.Input, OpenAccess.ReadWrite)
+        'FileOpen(1, path, OpenMode.Output, OpenAccess.Write)
 
         With p1 '// we start by updateing the player Pos
-            player1 = player1 + "," + .Hitpoints + "," + .Top + "," + .Left
+            player1 = player1 + "," + Str(.Hitpoints) + "," + Str(.Top) + "," + Str(.Left)
 
         End With
         '// Format ,HP,Top,Left
         With p2
-            player2 = player2 + "," + .Hitpoints + "," + .Top + "," + .Left
+            player2 = player2 + "," + Str(.Hitpoints) + "," + Str(.Top) + "," + Str(.Left)
         End With
         With p3
-            player3 = player3 + "," + .Hitpoints + "," + .Top + "," + .Left
+            player3 = player3 + "," + Str(.Hitpoints) + "," + Str(.Top) + "," + Str(.Left)
         End With
-        WriteLine(1, player1)
-        WriteLine(1, player2)
-        WriteLine(1, player3)
+
+        x.WriteLine(player1)
+        x.WriteLine(player2)
+        x.WriteLine(player3)
+        x.Close()
 
 
     End Sub
+
+
 End Class
