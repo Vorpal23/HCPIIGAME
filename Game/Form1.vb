@@ -57,11 +57,7 @@ Public Class Form1
         Hitpointsbar1.Update(c)
         If c.keyPressed = True Then
             c.Movement(key)
-            Try
-                mp.Turn_Advance(PlayerAva1, PlayerAva2, PlayerAva3)
-            Catch ex As Exception
-                Thread.Sleep(500)
-            End Try
+
         End If
     End Sub
     Sub Host_Start()
@@ -70,16 +66,11 @@ Public Class Form1
 
     Private Sub Form1_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
         c.keyPressed = False
-        Try
-            mp.Take_turn(PlayerAva1, PlayerAva2, PlayerAva3)
-        Catch ex As Exception
-            Thread.Sleep(400)
-        End Try
 
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        c = PlayerAva1
+        c = PlayerAva2
         Hitpointsbar1.Update(c)
         c.Mvmspeed = 5
         Chose()
