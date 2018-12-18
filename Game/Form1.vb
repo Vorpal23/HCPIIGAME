@@ -53,12 +53,8 @@ Public Class Form1
     Private Sub Tm1_Tick(sender As Object, e As EventArgs) Handles Tm1.Tick
         '  Dim ListenerThread As New Thread(New ThreadStart(AddressOf Host_Start))
         ' If Not ListenerThread.IsAlive Then ListenerThread.Start()
-<<<<<<< HEAD
         mp.Take_turn(PlayerAva1, PlayerAva2, PlayerAva3)
         Hitpointsbar1.Update(c)
-=======
-
->>>>>>> e67b2e14ed5fad9f61dec7f760a187f9c39aaf47
         If c.keyPressed = True Then
             c.Movement(key)
         End If
@@ -80,14 +76,6 @@ Public Class Form1
 
 
 
-    End Sub
-
-    Private Sub btnBattleUI_Click(sender As Object, e As EventArgs) Handles btnBattleUI.Click
-        Battleui1.inta(c)
-        Battleui1.Width = Me.Width
-        Battleui1.Height = Me.Height
-        Battleui1.Left = 0
-        Battleui1.Top = 55
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
