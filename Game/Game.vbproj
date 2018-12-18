@@ -196,5 +196,11 @@
   <ItemGroup>
     <None Include="Imgs\Wall\wall.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orc_Idle.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imgs\Orc\OrcI.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -6,6 +6,13 @@ Public Class Form1
     Dim key As KeyPressEventArgs
     Dim hc As Boolean
     Dim turn As String
+    Public walls(1) As Wallex
+
+    Sub SetControl()
+        'PUT WALLS HERE RETARDS
+        walls(0) = Wallex1
+        walls(1) = Wallex2
+    End Sub
 
     Sub Chose()
         Dim pal As New PlayerAva With {
@@ -59,7 +66,7 @@ Public Class Form1
         Hitpointsbar1.Update(PlayerAva1)
         PlayerAva1.Mvmspeed = 5
         Chose()
-
+        SetControl()
 
 
 
@@ -83,4 +90,5 @@ Public Class Form1
 
 
     End Sub
+
 End Class

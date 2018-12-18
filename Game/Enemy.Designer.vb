@@ -30,7 +30,9 @@ Partial Class Enemy
         '
         'PicBox
         '
-        Me.PicBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.PicBox.BackColor = System.Drawing.Color.Transparent
+        Me.PicBox.ImageLocation = ""
+        Me.PicBox.InitialImage = Global.Game.My.Resources.Resources.Orc_Idle
         Me.PicBox.Location = New System.Drawing.Point(0, 0)
         Me.PicBox.Name = "PicBox"
         Me.PicBox.Size = New System.Drawing.Size(120, 150)
