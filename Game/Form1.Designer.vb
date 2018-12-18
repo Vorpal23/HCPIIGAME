@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
@@ -29,21 +29,17 @@ Partial Class Form1
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.btNet = New System.Windows.Forms.Button()
-        Me.Wallex2 = New Game.Wallex()
-        Me.Enemy1 = New Game.Enemy()
-        Me.PlayerAva3 = New Game.PlayerAva()
-        Me.PlayerAva2 = New Game.PlayerAva()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Battleui1 = New Game.Battleui()
         Me.Hitpointsbar1 = New Game.Hitpointsbar()
         Me.Wallex1 = New Game.Wallex()
         Me.PlayerAva1 = New Game.PlayerAva()
-        Me.btTake = New System.Windows.Forms.Button()
+        Me.PlayerAva2 = New Game.PlayerAva()
+        Me.PlayerAva3 = New Game.PlayerAva()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -90,30 +86,16 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "GroupBox1"
         '
-        'Label1
+        'RadioButton1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(14, 106)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Label1"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(17, 72)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 3
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(100, 19)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(17, 26)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(90, 17)
+        Me.RadioButton1.TabIndex = 0
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "RadioButton1"
+        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'RadioButton2
         '
@@ -126,78 +108,30 @@ Partial Class Form1
         Me.RadioButton2.Text = "RadioButton2"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'Button2
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(17, 26)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(90, 17)
-        Me.RadioButton1.TabIndex = 0
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "RadioButton1"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.Button2.Location = New System.Drawing.Point(100, 19)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
         '
-        'btNet
+        'TextBox2
         '
-        Me.btNet.Location = New System.Drawing.Point(431, 312)
-        Me.btNet.Name = "btNet"
-        Me.btNet.Size = New System.Drawing.Size(128, 78)
-        Me.btNet.TabIndex = 12
-        Me.btNet.Text = "NETWORK TEST"
-        Me.btNet.UseVisualStyleBackColor = True
+        Me.TextBox2.Location = New System.Drawing.Point(17, 72)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.TabIndex = 3
         '
-        'Wallex2
+        'Label1
         '
-        Me.Wallex2.AutoSize = True
-        Me.Wallex2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Wallex2.BackColor = System.Drawing.Color.Transparent
-        Me.Wallex2.Location = New System.Drawing.Point(943, 423)
-        Me.Wallex2.Name = "Wallex2"
-        Me.Wallex2.Size = New System.Drawing.Size(240, 128)
-        Me.Wallex2.TabIndex = 11
-        '
-        'Enemy1
-        '
-        Me.Enemy1.Hitpoints = 0
-        Me.Enemy1.Location = New System.Drawing.Point(965, 251)
-        Me.Enemy1.Max_Hitpoints = 20
-        Me.Enemy1.Mvmspeed = 5
-        Me.Enemy1.Name = "Enemy1"
-        Me.Enemy1.PositionXY = New Integer() {0, 0, 0}
-        Me.Enemy1.Size = New System.Drawing.Size(108, 156)
-        Me.Enemy1.TabIndex = 10
-        '
-        'PlayerAva3
-        '
-        Me.PlayerAva3.AutoSize = True
-        Me.PlayerAva3.BackColor = System.Drawing.Color.Transparent
-        Me.PlayerAva3.Hitpoints = 20
-        Me.PlayerAva3.keyPressed = False
-        Me.PlayerAva3.Location = New System.Drawing.Point(741, 123)
-        Me.PlayerAva3.Max_Hitpoints = 20
-        Me.PlayerAva3.Mvmspeed = 5
-        Me.PlayerAva3.Name = "PlayerAva3"
-        Me.PlayerAva3.pname = Nothing
-        Me.PlayerAva3.PositionXY = New Integer() {0, 0, 0}
-        Me.PlayerAva3.Size = New System.Drawing.Size(104, 126)
-        Me.PlayerAva3.TabIndex = 9
-        Me.PlayerAva3.type = "Cleric"
-        '
-        'PlayerAva2
-        '
-        Me.PlayerAva2.AutoSize = True
-        Me.PlayerAva2.BackColor = System.Drawing.Color.Transparent
-        Me.PlayerAva2.Hitpoints = 20
-        Me.PlayerAva2.keyPressed = False
-        Me.PlayerAva2.Location = New System.Drawing.Point(517, 118)
-        Me.PlayerAva2.Max_Hitpoints = 20
-        Me.PlayerAva2.Mvmspeed = 5
-        Me.PlayerAva2.Name = "PlayerAva2"
-        Me.PlayerAva2.pname = Nothing
-        Me.PlayerAva2.PositionXY = New Integer() {0, 0, 0}
-        Me.PlayerAva2.Size = New System.Drawing.Size(104, 126)
-        Me.PlayerAva2.TabIndex = 8
-        Me.PlayerAva2.type = "Cleric"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(14, 106)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Label1"
         '
         'Battleui1
         '
@@ -244,14 +178,37 @@ Partial Class Form1
         Me.PlayerAva1.TabIndex = 0
         Me.PlayerAva1.type = "Paladin"
         '
-        'btTake
+        'PlayerAva2
         '
-        Me.btTake.Location = New System.Drawing.Point(565, 312)
-        Me.btTake.Name = "btTake"
-        Me.btTake.Size = New System.Drawing.Size(128, 78)
-        Me.btTake.TabIndex = 13
-        Me.btTake.Text = "TAKE TURN"
-        Me.btTake.UseVisualStyleBackColor = True
+        Me.PlayerAva2.AutoSize = True
+        Me.PlayerAva2.BackColor = System.Drawing.Color.Transparent
+        Me.PlayerAva2.Hitpoints = 20
+        Me.PlayerAva2.keyPressed = False
+        Me.PlayerAva2.Location = New System.Drawing.Point(517, 118)
+        Me.PlayerAva2.Max_Hitpoints = 20
+        Me.PlayerAva2.Mvmspeed = 5
+        Me.PlayerAva2.Name = "PlayerAva2"
+        Me.PlayerAva2.pname = Nothing
+        Me.PlayerAva2.PositionXY = New Integer() {0, 0, 0}
+        Me.PlayerAva2.Size = New System.Drawing.Size(104, 126)
+        Me.PlayerAva2.TabIndex = 8
+        Me.PlayerAva2.type = "Cleric"
+        '
+        'PlayerAva3
+        '
+        Me.PlayerAva3.AutoSize = True
+        Me.PlayerAva3.BackColor = System.Drawing.Color.Transparent
+        Me.PlayerAva3.Hitpoints = 20
+        Me.PlayerAva3.keyPressed = False
+        Me.PlayerAva3.Location = New System.Drawing.Point(741, 123)
+        Me.PlayerAva3.Max_Hitpoints = 20
+        Me.PlayerAva3.Mvmspeed = 5
+        Me.PlayerAva3.Name = "PlayerAva3"
+        Me.PlayerAva3.pname = Nothing
+        Me.PlayerAva3.PositionXY = New Integer() {0, 0, 0}
+        Me.PlayerAva3.Size = New System.Drawing.Size(104, 126)
+        Me.PlayerAva3.TabIndex = 9
+        Me.PlayerAva3.type = "Cleric"
         '
         'Form1
         '
@@ -259,10 +216,6 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1276, 638)
-        Me.Controls.Add(Me.btTake)
-        Me.Controls.Add(Me.btNet)
-        Me.Controls.Add(Me.Wallex2)
-        Me.Controls.Add(Me.Enemy1)
         Me.Controls.Add(Me.PlayerAva3)
         Me.Controls.Add(Me.PlayerAva2)
         Me.Controls.Add(Me.GroupBox1)
@@ -301,8 +254,4 @@ Partial Class Form1
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents PlayerAva2 As PlayerAva
     Friend WithEvents PlayerAva3 As PlayerAva
-    Friend WithEvents Enemy1 As Enemy
-    Friend WithEvents Wallex2 As Wallex
-    Friend WithEvents btNet As Button
-    Friend WithEvents btTake As Button
 End Class

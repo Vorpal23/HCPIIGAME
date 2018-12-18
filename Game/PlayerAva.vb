@@ -10,7 +10,6 @@ Public Class PlayerAva
     Property wep As Item
     Property pname As String
     Property type As String = "Cleric"
-    Dim canMove As Boolean = True
     '// Global Declarations ( ONLY USED IN THIS CLASS ) 
     Dim walk As Boolean
 
@@ -77,44 +76,41 @@ Public Class PlayerAva
         Dim X As Integer = Me.Left
         Dim Y As Integer = Me.Top
 
+
         If k = "w" Then
             If Form1.Wallex1.Can_Move_Ver(Me, -1 * Mvmspeed) Then
                 Me.Top = Me.Top - Mvmspeed
-                'If Not Form1.Wallex1.Can_Move_Ver(Me, -1 * Mvmspeed) Then
-                '    Me.Top = Me.Top + 2 * Mvmspeed
-                'End If
+                If Not Form1.Wallex1.Can_Move_Ver(Me, -1 * Mvmspeed) Then
+                    Me.Top = Me.Top + 2 * Mvmspeed
+                End If
             End If
-            CheckCol(0)
         End If
 
         If k = "s" Then
             If Form1.Wallex1.Can_Move_Ver(Me, Mvmspeed) Then
                 Me.Top = Me.Top + Mvmspeed
-                'If Not Form1.Wallex1.Can_Move_Ver(Me, Mvmspeed) Then
-                '    Me.Top = Me.Top - 2 * Mvmspeed
-                'End If
+                If Not Form1.Wallex1.Can_Move_Ver(Me, Mvmspeed) Then
+                    Me.Top = Me.Top - 2 * Mvmspeed
+                End If
             End If
-            CheckCol(1)
         End If
 
         If k = "a" Then
             If Form1.Wallex1.Can_Move_Hor(Me, -1 * Mvmspeed) Then
                 Me.Left = Me.Left - Mvmspeed
-                'If Not Form1.Wallex1.Can_Move_Hor(Me, -1 * Mvmspeed) Then
-                '    Me.Left = Me.Left + 2 * Mvmspeed
-                'End If
+                If Not Form1.Wallex1.Can_Move_Hor(Me, -1 * Mvmspeed) Then
+                    Me.Left = Me.Left + 2 * Mvmspeed
+                End If
             End If
-            CheckCol(2)
         End If
 
         If k = "d" Then
             If Form1.Wallex1.Can_Move_Hor(Me, Mvmspeed) Then
                 Me.Left = Me.Left + Mvmspeed
-                'If Not Form1.Wallex1.Can_Move_Hor(Me, -Mvmspeed) Then
-                '    Me.Left = Me.Left - 2 * Mvmspeed
-                'End If
+                If Not Form1.Wallex1.Can_Move_Hor(Me, -Mvmspeed) Then
+                    Me.Left = Me.Left - 2 * Mvmspeed
+                End If
             End If
-            CheckCol(3)
         End If
 
 
@@ -127,64 +123,18 @@ Public Class PlayerAva
         Else
             walk = False
         End If
-        'While walk
-        '    'If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
+        While walk
+            'If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
 
-        '    Clock.Interval = (1000 / 5)
-        '    Clock.Start()
-        '    walk = False
-        'End While
-        'If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
+            Clock.Interval = (1000 / 5)
+            Clock.Start()
+            walk = False
+        End While
+        If Not PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif" And walk = True Then PictureBox1.ImageLocation = My.Application.Info.DirectoryPath + "\Imgs\Walk\Pw.gif"
 
 
 
-    End Sub
 
-    Async Sub CheckCol(id As Integer)
-        'Check if touching any walls
-        For c = 0 To UBound(Form1.walls)
-            Dim wall As Wallex = Form1.walls(c)
-            Select Case id
-                Case 0 'Top
-                    If Not wall.Can_Move_Ver(Me, -1 * Mvmspeed) Then
-                        Me.Top = Me.Top + 2 * Mvmspeed
-                    End If
-                Case 1 'Bottom
-                    If Not wall.Can_Move_Ver(Me, Mvmspeed) Then
-                        Me.Top = Me.Top - 2 * Mvmspeed
-                    End If
-                Case 2 'Left
-                    If Not wall.Can_Move_Hor(Me, -1 * Mvmspeed) Then
-                        Me.Left = Me.Left + 2 * Mvmspeed
-                    End If
-                Case 3 'Right
-                    If Not wall.Can_Move_Hor(Me, -Mvmspeed) Then
-                        Me.Left = Me.Left - 2 * Mvmspeed
-                    End If
-            End Select
-        Next
-
-        For c = 0 To UBound(Form1.enemies)
-            Dim en As Enemy = Form1.enemies(c)
-            Select Case id
-                Case 0 'Top
-                    If Not en.Can_Move_Ver(Me, -1 * Mvmspeed) Then
-                        Me.Top = Me.Top + 2 * Mvmspeed
-                    End If
-                Case 1 'Bottom
-                    If Not en.Can_Move_Ver(Me, Mvmspeed) Then
-                        Me.Top = Me.Top - 2 * Mvmspeed
-                    End If
-                Case 2 'Left
-                    If Not en.Can_Move_Hor(Me, -1 * Mvmspeed) Then
-                        Me.Left = Me.Left + 2 * Mvmspeed
-                    End If
-                Case 3 'Right
-                    If Not en.Can_Move_Hor(Me, -Mvmspeed) Then
-                        Me.Left = Me.Left - 2 * Mvmspeed
-                    End If
-            End Select
-        Next
     End Sub
 
     Private Sub Wait(ByVal interval As Integer)
@@ -260,9 +210,9 @@ Load_Ani:
 
     Private Sub Clock_Tick(sender As Object, e As EventArgs) Handles Clock.Tick
         ClockC += 1
-        If keyPressed = True And PictureBox1.Image.Width <> Walk_Img().Width Then
+        If keyPressed = True And Mvmspeed <> 0 And PictureBox1.Image.ToString <> Walk_Img().ToString Then
             PictureBox1.Image = Walk_Img()
-        ElseIf keyPressed = False Then
+        ElseIf keyPressed = False And PictureBox1.Image.ToString <> idle_Img().ToString Then
             PictureBox1.Image = Idle_Img()
         End If
     End Sub
